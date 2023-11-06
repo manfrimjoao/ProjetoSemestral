@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Gabarito:wght@500&family=Lora:ital@0;1&family=Playfair+Display&family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+:root{
+    --cor-principal: rgb(70, 11, 21);
+    --cor-secundaria: #40414f;
+}
+
+body{
+    margin: 0;
+
+}
+
+.cabecalho {
+    background-color: white;
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-barra{
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logotipo {
+    width: auto;
+    height: 80px; 
+    margin-right: 20px; /* Espaço entre o logotipo e o menu */
+}
+
+.barra-pesquisa {
+    display: flex;
+    background-color: #ccc;
+    border-radius: 20px;
+    padding: 10px; 
+    align-items: center;
+    
+    cursor: pointer; 
+}
+
+.barra-pesquisa:focus-within {
+    border: 2px solid var(--cor-secundaria);
+}
+
+.barra-pesquisa i {
+    color: var(--cor-secundaria);
+    margin-right: 10px;
+}
+
+.barra-pesquisa input {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    
+    padding: 0;
+    margin: 0;
+    transition: border 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+.barra-pesquisa input::placeholder {
+    color: var(--cor-secundaria);
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+.icon-person, .icon-bag, .botaoMenu {
+    color: var(--cor-principal);
+    transition: color 0.3s;
+    margin-right: 20px; /* Espaço entre os ícones */
+}
+
+
+.icon-person:hover, .icon-bag:hover, .botaoMenu:hover {
+    color: var(--cor-secundaria);
+}
+
+.menu {
+    position: relative;
+    display: inline-block;
+}
+
+.botaoMenu {
+    padding: 12px 5px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+.dropdownMenu {
+    display: block;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.dropdownMenu a {
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    padding: 12px 16px;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
+
+.dropdownMenu a:hover {
+    background-color: #ddd;
+    
+}
+
+.menu:hover .dropdownMenu {
+    display: block;
+    max-height: 200px;
+    opacity: 1;
+}
+
+.menu:hover .botaoMenu {
+    color: var(--cor-secundaria);
+}
+
+
+footer {
+    background-color: var(--cor-secundaria);
+    color: #fff;
+    padding: 20px 0; 
+    text-align: center;
+    margin-top: auto; /* Adiciona margem automática em cima para empurrar para baixo */
+    padding: 20px 0;
+}
+
+/* Style página de login */
+.login-container {
+    max-width: 300px;
+    margin: 2em auto;
+    padding: 55px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif; 
+    font-size: 48px; 
+    font-weight: 700; /* Deixar a fonte mais grossa */
+    margin-bottom: 1em;
+    text-align: center; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    
+}
+
+h2:after {
+    content: '';
+    display: block;
+    height: 3px;
+    background: black;
+    width: 22%;
+    margin: 8px auto 0;
+}
+
+form#formulario input[type="text"],
+form#formulario input[type="password"] {
+    font-family: 'Open Sans', sans-serif; 
+    padding: 10px;
+    border: 2px solid var(--cor-principal); /* Bordas mais espessas */
+    border-radius: 4px;
+    font-size: 1em;
+    margin-bottom: 15px; 
+}
+
+form#formulario label {
+    text-align: left;
+    color: var(--cor-principal);
+    display: block;
+    margin-bottom: 0.2em;
+}
+
+
+form#formulario button {
+    width: 100%; 
+    padding: 10px;
+    background-color: var(--cor-principal); 
+    color: white; 
+    border: none; 
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 15px; /* Espaço acima do botão */
+    transition: background-color 0.3s, color 0.3s; /* Transição suave para cor de fundo e texto */
+}
+
+form#formulario button:hover {
+    background-color: rgb(235, 101, 123);
+}
+
+.logout-link {
+    display: block;
+    margin-top: 2em;
+    color: var(--cor-secundaria);
+    text-decoration: none;
+}
+
+.logout-link:hover {
+    text-decoration: underline;
+}
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.cadastro-redirecionar{   
+    margin-top: 10px; 
+   
+}
+
+
