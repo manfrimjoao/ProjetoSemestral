@@ -1,0 +1,69 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/cadastro.css">
+    <script src="https://kit.fontawesome.com/7c8fe48803.js" crossorigin="anonymous"></script>
+    <script src="js/cadastro.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Cadastro de Usuário</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="logo-barra">
+            <div class="logo">
+                <a href="index.html"><img class="logotipo" src="imagens/logoSiteprojeto.png"></a>
+            </div>
+        
+            <div class="barra-pesquisa">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" id="pesquisa" placeholder="Buscar produto">
+            </div>
+        </div>
+
+    
+        <div class="icons">
+            <div class="menu">
+                <i class="fa-solid fa-bars fa-lg botaoMenu"></i>
+                <div class="dropdownMenu">
+                    <a href="produtos.html">Catálogo</a>
+                    <a href="login.html">Login</a>
+                    <a href="cadastro.html">Cadastro</a>
+                    <a href="checkout.html">Carrinho</a>
+                </div>
+            </div>
+            <a href="login.html"><i class="fa-solid fa-user icon-person fa-lg"></i></a>
+            <a href="checkout.html"><i class="fa-solid fa-bag-shopping icon-bag fa-lg"></i></a>
+        </div>
+    </header>
+
+<main>
+    <h2>CADASTRO</h2>
+    <div class="cadastro-container">
+    <form id="formulario">
+        <label>NOME DE USUÁRIO:</label><br>
+        <input type="text" id="username" name="username" required><br>
+        
+        <label>SENHA:</label><br>
+        <input type="password" id="password" name="password" required><br>
+
+        <label>EMAIL:</label><br>
+        <input type="email" id="email" name="email" required><br>
+
+        <label>CPF:</label><br>
+        <input type="cpf" id="cpf" name="cpf" required><br>
+        
+        <button type="button" onclick="cadastrar()">enviar</button>
+    </form>
+
+    <div class="login-redirecionar">
+        Já tem conta? <a href="login.html" class="login-link">Login</a>
+    </div>
+
+    </div>
+</main>
+
+    <footer>
+        <p>Copyright © 2023 Cowboy Hats. All Rights Reserved</p>
+    </footer>
+</body>
+</html>

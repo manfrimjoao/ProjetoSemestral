@@ -1,0 +1,88 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <script src="https://kit.fontawesome.com/7c8fe48803.js" crossorigin="anonymous"></script>
+    <script src="js/admin.js"></script>
+    <link rel="stylesheet" href="css/admin_style.css"> 
+    
+
+    <meta charset="UTF-8">
+    <title>Administrador</title>
+</head>
+<body onload="carregarProdutos()">
+    <header class="cabecalho">
+        <div class="logo-barra">
+            <div class="logo">
+                <a href="index.html"><img class="logotipo" src="imagens/logoSiteprojeto.png"></a>
+            </div>
+        
+            <div class="barra-pesquisa">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" id="pesquisa" placeholder="Buscar produto">
+            </div>
+        </div>
+
+    
+        <div class="icons">
+            <div class="menu">
+                <i class="fa-solid fa-bars fa-lg botaoMenu"></i>
+                <div class="dropdownMenu">
+                    <a href="produtos.html">Catálogo</a>
+                    <a href="login.html">Login</a>
+                    <a href="cadastro.html">Cadastro</a>
+                    <a href="checkout.html">Carrinho</a>
+                </div>
+            </div>
+            <a href="login.html"><i class="fa-solid fa-user icon-person fa-lg"></i></a>
+            <a href="checkout.html"><i class="fa-solid fa-bag-shopping icon-bag fa-lg"></i></a>
+        </div>
+    </header>
+
+    <h2> GERENCIAR PRODUTOS </h2>
+        <div>
+            <form id="formularioCadastroProduto" enctype="multipart/form-data"> 
+                <h3>Inserir Novo Produto</h3>
+                <input type="text" placeholder="Nome" name="nome" id="cadNome"> 
+                <input type="text" placeholder="Preço" name="preco" id="cadPreco">
+                <select name="genero" id="cadGenero"> 
+                    <option value="" disabled selected>Gênero</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Unisex">Unisex</option>
+                </select>
+
+                    <!-- Campo de seleção de categoria -->
+                <select name="categoria" id="cadCategoria" required>
+                    <option value="" disabled selected>Categoria</option>
+                    <option value="Chapeu">Chapéu</option>
+                    <option value="Fivela">Fivela</option>
+                </select>
+
+                <input type="file" accept="image/png" name="imagem" id="cadImagem">
+                <button onclick="cadastrarProduto()" type="button">Cadastrar</button> 
+            </form>
+        </div>
+        <div class="admin-container">
+             <table id="tabelaProdutos">
+                <thead> 
+                    <tr>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Gênero</th>
+            <th>Categoria</th>
+            <th>Excluir</th>
+                    </tr>
+                </thead>
+                <tbody id="itensTabela">
+                    
+                </tbody>
+           
+          </table>
+        </div>
+
+
+    <footer>
+        <p>Copyright © 2023 Cowboys Hats. All Rights Reserved</p>
+    </footer>
+</body>
+</html>

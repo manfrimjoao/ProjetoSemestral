@@ -1,0 +1,64 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <script src="https://kit.fontawesome.com/7c8fe48803.js" crossorigin="anonymous"></script>
+    <script src="js/login.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Login de Usuário</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="logo-barra">
+            <div class="logo">
+                <a href="index.html"><img class="logotipo" src="imagens/logoSiteprojeto.png"></a>
+            </div>
+        
+            <div class="barra-pesquisa">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" id="pesquisa" placeholder="Buscar produto">
+            </div>
+        </div>
+
+    
+        <div class="icons">
+            <div class="menu">
+                <i class="fa-solid fa-bars fa-lg botaoMenu"></i>
+                <div class="dropdownMenu">
+                    <a href="produtos.html">Catálogo</a>
+                    <a href="login.html">Login</a>
+                    <a href="cadastro.html">Cadastro</a>
+                    <a href="checkout.html">Carrinho</a>
+                </div>
+            </div>
+            <a href="login.html"><i class="fa-solid fa-user icon-person fa-lg"></i></a>
+            <a href="checkout.html"><i class="fa-solid fa-bag-shopping icon-bag fa-lg"></i></a>
+        </div>
+    </header>
+
+<main>
+    <h2>LOGIN</h2>
+    <div class="login-container">
+        <form id="formulario" method="post" action="login.php">
+            <label>NOME DE USUÁRIO:</label><br>
+            <input type="text" id="username" name="username" required><br>
+        
+            <label>SENHA:</label><br>
+            <input type="password" id="password" name="password" required><br>
+
+        
+             <button type="button" onclick="logar()">enviar</button>
+             
+    </form>
+    <a href="php/login.php?logout=1" onclick="deslogar()">Fazer Logout</a>
+        <div class="cadastro-redirecionar">
+            Não possui login? <a href="cadastro.html" class="cadastro-link">Cadastrar-se</a>
+        </div>
+    </div>
+</main>
+
+    <footer>
+        <p>Copyright © 2023 Cowboy Hats. All Rights Reserved</p>
+    </footer>
+</body>
+</html>

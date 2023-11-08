@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/checkout.css">
+    <script src="https://kit.fontawesome.com/7c8fe48803.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/checkout.js"></script>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+</head>
+<body>
+    <header class="cabecalho">
+            <div class="logo-barra">
+                <div class="logo">
+                    <a href="index.html"><img class="logotipo" src="imagens/logoSiteprojeto.png"></a>
+                </div>
+            
+                <div class="barra-pesquisa">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" id="pesquisa" placeholder="Buscar produto">
+                </div>
+            </div>
+    
+        
+            <div class="icons">
+                <div class="menu">
+                    <i class="fa-solid fa-bars fa-lg botaoMenu"></i>
+                    <div class="dropdownMenu">
+                        <a href="produtos.html">Catálogo</a>
+                        <a href="login.html">Login</a>
+                        <a href="cadastro.html">Cadastro</a>
+                        <a href="checkout.html">Carrinho</a>
+                    </div>
+                </div>
+                <a href="login.html"><i class="fa-solid fa-user icon-person fa-lg"></i></a>
+                <a href="checkout.html"><i class="fa-solid fa-bag-shopping icon-bag fa-lg"></i></a>
+            </div>
+    </header>
+    <h2>Carrinho</h2>
+    <div>
+        <table border="1" id="tabelaProdutos">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                    <th>Quantidade</th>
+                    <th>Categoria</th>
+                    <th>Excluir</th>
+                </tr>
+            </thead>
+            <tbody id="itensTabela">
+                <!-- Os itens serão preenchidos via JavaScript -->
+            </tbody>
+        </table>
+
+    <div class="total-container">
+       
+        <table id="totalValue">
+           
+        </table>
+    </div>
+
+       
+        <div id="opcoesPagamento" class="payment-options" style="display: none;">
+            <h3>Opções de Pagamento</h3>
+            <form id="formularioPagamento">
+                <input type="radio" id="credito" name="metodoPagamento" value="credito">
+                <label for="credito">Crédito</label><br>
+                <div id="formularioCredito" style="display: none;">
+                    <h3>Informações do Cartão de Crédito</h3>
+                    <label for="nomeCartaoCredito">Nome no Cartão:</label><br>
+                    <input type="text" id="nomeCartaoCredito" name="nomeCartao" required><br>
+                    <label for="numeroCartaoCredito">Número do Cartão:</label><br>
+                    <input type="text" id="numeroCartaoCredito" name="numeroCartao" required pattern="\d{16}" maxlength="16"><br>
+                    <label for="validadeCartaoCredito">Data de Validade:</label><br>
+                    <input type="date" id="validadeCartaoCredito" name="validadeCartao" required><br>
+                    <label for="cvvCartaoCredito">CVV:</label><br>
+                    <input type="text" id="cvvCartaoCredito" name="cvvCartao" required pattern="\d{3}" maxlength="3"><br>
+                    <button type="button" onclick="finalizarCompra('credito')">Finalizar Compra</button>
+                </div>
+        
+                <input type="radio" id="debito" name="metodoPagamento" value="debito">
+                <label for="debito">Débito</label><br>
+                <div id="formularioDebito" style="display: none;">
+                    <h3>Informações do Cartão de Débito</h3>
+                    <label for="nomeCartaoDebito">Nome no Cartão:</label><br>
+                    <input type="text" id="nomeCartaoDebito" name="nomeCartao" required><br>
+                    <label for="numeroCartaoDebito">Número do Cartão:</label><br>
+                    <input type="text" id="numeroCartaoDebito" name="numeroCartao" required pattern="\d{16}" maxlength="16"><br>
+                    <label for="validadeCartaoDebito">Data de Validade:</label><br>
+                    <input type="date" id="validadeCartaoDebito" name="validadeCartao" required><br>
+                    <label for="cvvCartaoDebito">CVV:</label><br>
+                    <input type="text" id="cvvCartaoDebito" name="cvvCartao" required pattern="\d{3}" maxlength="3"><br>
+                    <button type="button" onclick="finalizarCompra('debito')">Finalizar Compra</button>
+                </div>
+        
+                <input type="radio" id="pix" name="metodoPagamento" value="pix">
+                <label for="pix">PIX</label><br>
+                <div id="qrcodePix" style="display: none;">
+                    <h3>Pagamento via PIX</h3>
+                    <!-- O conteúdo de qrcodePix será gerado dinamicamente pela função gerarQrCodePix -->
+                </div>
+            </form>
+        </div>
+        
+
+        <br>
+        <button type="button" id="botaoContinuar" onclick="mostrarOpcoesPagamento()">Continuar</button>
+
+    </div>
+    <footer>
+        <p>Copyright © 2023 Cowboys Hats. All Rights Reserved</p>
+    </footer>
+</body>
+</html>
